@@ -1,0 +1,66 @@
+{
+    "name": "water-reminder",
+    "displayName": "Water Reminder",
+    "description": "Reminder you to drink water",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "water-reminder.start",
+                "title": "Start Water Reminders",
+                "category": "Water Reminder"
+            },
+            {
+                "command": "water-reminder.stop",
+                "title": "Stop Water Reminders",
+                "category": "Water Reminder"
+            },
+            {
+                "command": "water-reminder.DrinkNow",
+                "title": "I drank water",
+                "category": "Water Reminder"
+            }
+        ],
+        "configuration": {
+            "title": "Water Reminder",
+            "properties": {
+                "waterReminder.interval": {
+                    "type": "boolean",
+                    "default": "1",
+                    "description": "Reminder interval in minutes"
+                },
+                "waterReminder.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enabled water reminders"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^24.10.1",
+        "@types/vscode": "^1.106.1",
+        "typescript": "^4.9.5"
+    }, 
+      "dependencies": {
+    "undici-types": "^7.16.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
